@@ -5,6 +5,52 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <h1>Hello World!222</h1>
+        <h1>Test</h1>
+        <textarea id="resultado"></textarea>
+        <button id="btnJson">Factura JSON</button>
+        <button id="btnXML">Factura XML</button>
+        <button id="btnJsonLista">Lista Facturas JSON</button>
+        <button id="btnXMLLista">Lista Facturas XML</button>
+        <script>
+
+            function doRequest(url, miInit) {
+                fetch(url, miInit)
+                        .then(function (response) {
+                            return response.text();
+                        })
+                        .then(function (miBlob) {
+                            console.log(miBlob);
+                            let miResultado = document.getElementById("resultado");
+                            //miResultado.innerHTML = miBlob;
+                            miResultado.value = miBlob;
+                        });
+
+            }
+            ;
+//    'Accept': 'application/json, text/plain, */*',
+
+            document.getElementById("btnJson").addEventListener("click", function () {
+                var misCabeceras = new Headers();
+                misCabeceras.append('Accept','application/json')
+
+                var miInit = {method: 'GET',
+                    headers: misCabeceras,
+                    mode: 'cors',
+                    cache: 'default'};
+
+                doRequest('api/factura/1', miInit);
+            });
+            document.getElementById("btnJsonLista").addEventListener("click", function () {
+                var misCabeceras = new Headers();
+                
+                var miInit = {method: 'GET',
+                    headers: misCabeceras,
+                    mode: 'cors',
+                    cache: 'default'};
+
+                doRequest('api/factura', miInit);
+            });
+
+        </script>
     </body>
 </html>

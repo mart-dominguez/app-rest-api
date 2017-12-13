@@ -48,6 +48,13 @@ public class FacturaResource {
     public List<Factura>  getXml() {
         return facturaDao.listar();
     }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("{id}")    
+    public Factura  getJson(@PathParam("id") Integer id) {
+        return facturaDao.buscarPorId(1);
+    }
 
         /**
      * Retrieves representation of an instance of com.mdevsol.app.rest.FacturaResource
