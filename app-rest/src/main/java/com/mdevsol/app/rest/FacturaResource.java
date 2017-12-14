@@ -14,6 +14,7 @@ import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.PathParam;
@@ -71,8 +72,9 @@ public class FacturaResource {
      * PUT method for updating or creating an instance of FacturaResource
      * @param content representation for the resource
      */
-    @PUT
-    @Consumes(MediaType.APPLICATION_XML)
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     public void putXml(Factura content) {
+        System.out.println(content);
     }
 }
