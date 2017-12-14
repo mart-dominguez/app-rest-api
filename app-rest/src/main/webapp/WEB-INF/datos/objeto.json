@@ -1,0 +1,25 @@
+{
+        "id": 32,
+        "fecha": 1513248508100,
+        "cliente": {
+            "id": 999,
+            "nombre": "martin",
+            "cuit": "20-22333444-5"
+        },
+        "detalle": [{
+                "id": 1,
+                "descripcion": "producto 1",
+                "precio": 618.3368410436299,
+                "cantidad": 5
+            }, {
+                "id": 1,
+                "descripcion": "producto 2",
+                "precio": 535.736070643916,
+                "cantidad": 7
+            }, {
+                "id": 1,
+                "descripcion": "producto 3",
+                "precio": 221.42552731756837,
+                "cantidad": 10
+            }]
+    }

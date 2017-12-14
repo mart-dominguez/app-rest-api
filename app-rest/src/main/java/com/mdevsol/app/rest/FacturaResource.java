@@ -52,6 +52,12 @@ public class FacturaResource {
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    public List<Factura>  getJsonLista() {
+        return facturaDao.listar();
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("{id}")    
     public Factura  getJson(@PathParam("id") Integer id) {
         return facturaDao.buscarPorId(1);
@@ -68,6 +74,8 @@ public class FacturaResource {
         return facturaDao.buscarPorId(1);
     }
     
+    
+    
     /**
      * PUT method for updating or creating an instance of FacturaResource
      * @param content representation for the resource
@@ -76,5 +84,16 @@ public class FacturaResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public void putXml(Factura content) {
         System.out.println(content);
+    }
+    
+    
+        /**
+     * PUT method for updating or creating an instance of FacturaResource
+     * @param content representation for the resource
+     */
+    @POST
+    @Consumes(MediaType.TEXT_PLAIN)
+    public void putTexto(String texto) {
+        System.out.println(texto);
     }
 }

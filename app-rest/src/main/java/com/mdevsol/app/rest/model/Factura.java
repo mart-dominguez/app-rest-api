@@ -63,6 +63,11 @@ public class Factura {
     public void setDetalle(List<DetalleFactura> detalle) {
         this.detalle = detalle;
     }
+
+    @Override
+    public String toString() {
+        return "Factura{" + "id=" + id + ", fecha=" + fecha + ", cliente=" + cliente + '}';
+    }
     
     
     
